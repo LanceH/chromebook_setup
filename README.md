@@ -74,6 +74,20 @@ Close your shell and open it again and everything should be in place.
 # Installing Git (and Ruby)
 Referencing: https://skycocker.github.io/chromebrew/
 
+Using chromebrew:
 ```
 wget -q -O - https://raw.github.com/skycocker/chromebrew/master/install.sh | bash
 ```
+This will take a while as things are built and moved into place.  When is complete you should be able to use git and ruby.
+```
+chromos@localhost ~ $ git version
+git version 1.8.4
+chromos@localhost ~ $ ruby --version
+ruby 2.0.0p247 (2013-06-27 revision 41674) [xo86_64-linux]
+```
+
+See what other packages are available with crew using `crew search`.
+
+# Editors
+
+For now, simply install [Caret](https://chrome.google.com/webstore/detail/caret/fljalecfjciodhpcledpamjachpmelml?hl=en) from the Google app store.  It is an online editor.  You will only be able to work with files in Google's cloud, or in your Downoad directory.  It will not be able to view your home directory or follow symlinks from the Downloads directory.
