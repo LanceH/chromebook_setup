@@ -91,3 +91,10 @@ See what other packages are available with crew using `crew search`.
 # Editors
 
 For now, simply install [Caret](https://chrome.google.com/webstore/detail/caret/fljalecfjciodhpcledpamjachpmelml?hl=en) from the Google app store.  It is an online editor.  You will only be able to work with files in Google's cloud, or in your Downoad directory.  It will not be able to view your home directory or follow symlinks from the Downloads directory.
+
+# Next Steps
+At this point you should be ready to edit and run files in your `~/Downloads` directory.  This is a somewhat limited setup, but completely functional for golang development.
+
+The next step would be installing [Crouton](https://github.com/dnschneid/crouton) which will make much more of linux available, including graphical applications.  In particular I'll want a more full editor for extended use.
+
+Alternately, some people choose to dual boot linux, but that is something I can't explore simultaneously with my install of Crouton and will be left as an exercise for the reader.
