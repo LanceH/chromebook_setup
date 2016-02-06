@@ -25,4 +25,55 @@ To pull up a bash shell:
 * Press `Ctrl-D` to pull up the Chrome OS
 * Type `shell` at the command line and press enter
 
-You should find yourself in a normal Bash shell.  Oddly, you won't be in your own home directory.
+You should find yourself in a normal Bash shell.  
+
+Oddly, you won't be in your own home directory.
+
+```
+chronos@localhost / $ cd ~
+chromos@localhost ~ $ pwd
+/home/chronos/user
+```
+It doesn't matter what user you're logging in as, you'll always see your home directory as `/home/chronos/user`.  Different users will both see their home directories by the same name, but they are different and don't share files.
+
+# Installing Golang
+Referencing: https://github.com/golang/go/wiki/ChromeOS
+
+Synopsis for golang 1.5.3:
+* Download `go1.5.3.linux-amd64.tar.gz` from https://golang.org/dl/
+* ```sudo tar -C /usr/local -xzf ~/Downloads/go1.5.3.linux-amd64.tar.gz```
+
+Test it:
+```bash
+chronos@localhost ~ $ /usr/local/go/bin/go version
+go version go1.5.3 linux/amd64
+```
+
+Create a file in your Downloads directory named `gocode`.
+```
+mkdir ~/Downloads/gocode
+```
+
+Create a `tmp` directory which will be used when executing `go run`:
+```
+mkdir ~/tmp
+```
+
+Then add the following to your .bashrc file:
+```
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=~/Downloads/gocode
+export PATH=$PATH:$GOPATH/bin
+export TMPDIR=~/tmp
+sudo mount -i -o remount,exec /home/chronos/user/
+```
+The first three lines set up the normal paths required for GO to find executables and packages.  The TMPDIR variable is necessary when doing `go run` becaus the normal /tmp is mounted such that files can't be executed from there.  The fifth line remounts your home dir so that any files you build and store in your home directory can be executed.  Finally, we cd into the home directory for convenience sake.
+
+Close your shell and open it again and everything should be in place.
+
+# Installing Git (and Ruby)
+Referencing: https://skycocker.github.io/chromebrew/
+
+```
+wget -q -O - https://raw.github.com/skycocker/chromebrew/master/install.sh | bash
+```
