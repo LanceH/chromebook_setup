@@ -5,6 +5,11 @@ Setting up Chromebook for Golang development
 This should cover the steps necessary to get any Chromebook ready for development using the Golang programming language.  This should also include other commonly used programs (git, editor, etc...).
 
 * [Platform](#platform)
+* [Developer Mode](#developer-mode)
+* [Shell](#shell)
+* [Installing Golang](#installing-golang)
+* [Installing Git](#installing-git-and-ruby)
+* [Editors](#editors)
 * [Next Steps](#next-steps)
 
 # Platform
